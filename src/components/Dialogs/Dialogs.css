@@ -1,0 +1,68 @@
+
+.dialogs__wrapper {
+  display: flex;
+}
+
+.dialogs__title {
+  padding-bottom : 50px;
+  font-size      : 38px;
+  font-weight    : 700;
+  line-height    : 40px;
+  text-transform : uppercase;
+}
+
+.dialogs__name {
+  padding-left: 30px;
+  border-right: 2px solid #b3b3b3;
+  width: 20%;
+}
+
+.dialogs__name-item {
+  display       : flex;
+  margin-bottom : 30px;
+}
+
+.dialogs__name-item:last-child {
+  margin-bottom : 0px;
+}
+
+.dialogs__name-text {
+  display     : flex;
+  cursor      : pointer;
+  font-size   : 24px;
+  color       : #b3b3b3;
+  line-height : 26px;
+  align-items : center;
+}
+
+.dialogs__name-text.active {
+  color: #00cefc;
+}
+
+.dialogs__name-text.active.dialogs__name-text:before {
+  color: #00cefc;
+  background-color : #00cefc;
+}
+
+.dialogs__name-text:before {
+  content          : "";
+  height           : 10px;
+  width            : 10px;
+  margin-right     : 10px;
+
+  background-color : #b3b3b3;
+  border-radius    : 50%;
+}
+
+.dialogs__name-text:hover {
+  color : #8c8c8c;
+}
+
+.dialogs__name-text:hover.dialogs__name-text:before {
+  background-color : #8c8c8c;
+}
+
+.dialogs__messages {
+  padding-left: 40px;
+}
+

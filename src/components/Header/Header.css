@@ -1,0 +1,15 @@
+.header {
+  flex: 0 0 auto;
+  padding-top: 80px;
+}
+.header__wrapper {
+  background-color: #2c964a;
+  border-radius: 4px;
+  padding: 10px 0px;
+  display: flex;
+  align-items: center;
+}
+.header__logo {
+  max-width: 80px;
+  max-height: 80px;
+}

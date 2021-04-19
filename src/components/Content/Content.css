@@ -1,0 +1,15 @@
+.content {
+  padding-top: 20px;
+  height: 100%;
+  flex: 1 0 auto;
+}
+
+.content__wrapper {
+  display: flex;
+}
+.content__row:first-child {
+  width: 20%;
+}
+.content__row:last-child {
+  width: 80%;
+}

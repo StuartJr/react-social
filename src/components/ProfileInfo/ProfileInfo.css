@@ -1,0 +1,26 @@
+.profile-info {
+  display: flex;
+}
+
+.profile-info__wrapper {
+  padding-left : 40px;
+}
+
+.profile-info__list-item {
+  margin-bottom : 10px;
+  font-size     : 24px;
+  color         : #474747;
+  line-height   : 26px;
+}
+
+.profile-info__title {
+  margin-bottom : 30px;
+  font-size     : 38px;
+  font-weight   : 700;
+  line-height   : 42px;
+}
+
+.profile-info__avatar-img {
+  max-width: 200px;
+  max-height: 200px;
+}

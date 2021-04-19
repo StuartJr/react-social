@@ -1,17 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import './nullstyle.css';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
+import Header from "./components/Header/Header.js"
+import Content from "./components/Content/Content.js"
+import Footer from "./components/Footer/Footer.js"
+
+import store from "./redux/state";
+
+let renderDOM = () => {ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Header />
+    <Content
+      names={store.getState().names}
+      text={store.getState().pageProfile.textvalue}
+      messages={store.getState().messages}
+      postslist={store.getState().pageProfile.posts}
+      dispatch={store.dispatch.bind(store)}
+    />
+    <Footer />
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+}
+renderDOM();
+store.reloadDOM(renderDOM);
 reportWebVitals();
