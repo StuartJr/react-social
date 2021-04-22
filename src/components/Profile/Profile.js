@@ -1,6 +1,6 @@
 import "./Profile.css";
 import ProfileInfo from "./../ProfileInfo/ProfileInfo.js"
-import ProfilePost from "./../ProfilePost/ProfilePost.js"
+import ProfilePost from "./../ProfilePost/ProfilePostComponent.js"
 
 const Profile = (props) => {
   return (
