@@ -19,9 +19,9 @@ const Navbar = () => {
             </NavLink>
           </div>
           <div className="navbar__list-item">
-            <a href="/" className="navbar__list-link">
-             News
-            </a>
+            <NavLink to="/users" className="navbar__list-link">
+              Users
+            </NavLink>
           </div>
           <div className="navbar__list-item">
             <a href="/" className="navbar__list-link">

@@ -1,7 +1,6 @@
 import React from "react";
 import "./ProfilePost.css";
 import Post from "./Post/Post.js"
-import User from "./Users.js";
 
 const ProfilePost = (props) => {
   let newPostElement = React.createRef();
@@ -22,7 +21,6 @@ const ProfilePost = (props) => {
   return (
     <div className="profile-post">
       <div className="profile-post__wrapper">
-        <User />
         <p className="profile-post__title">My post</p>
         <textarea value={props.textvalue} onChange={postChenge} ref={newPostElement} placeholder="your news" type="text" className="profile-post__input" />
         <div className="profile-post__btn-wrapper">
