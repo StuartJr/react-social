@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './nullstyle.css';
 import reportWebVitals from './reportWebVitals';
+import "./assets/style/style.scss";
 
 import Header from "./components/Header/Header.js"
 import Content from "./components/Content/Content.js"
