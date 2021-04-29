@@ -5,8 +5,8 @@ import Users from "./Users.js";
 import Preloader from "./../common/Preloader/Preloader.js";
 
 import { 
-  unfollowUser,
-  followUser,
+  unfollow,
+  follow,
   setUsers,
   setCurrentPage,
   setTotalCount,
@@ -96,27 +96,14 @@ let mapStateToProps = (state) => {
     isFetching: state.pageUsers.isFetching
   }
 };
-let mapDispatchToProps = (dispatch) => {
-  return {
-    follow: (userid) => {
-      dispatch(followUser(userid));
-    },
-    unfollow: (userid) => {
-      dispatch(unfollowUser(userid));
-    },
-    setUsers: (users) => {
-      dispatch(setUsers(users));
-    },
-    setCurrentPage: (page) => {
-      dispatch(setCurrentPage(page));
-    },
-    setTotalCount: (totalCount) => {
-      dispatch(setTotalCount(totalCount));
-    },
-    setIsFetching: (fetching) => {
-      dispatch(setIsFetching(fetching));
-    }
-  }
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(UsersApiComponent);
+export default connect(mapStateToProps, 
+  {
+    follow,
+    unfollow,
+    setUsers,
+    setCurrentPage,
+    setTotalCount,
+    setIsFetching
+  })(UsersApiComponent);
+
