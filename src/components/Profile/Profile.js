@@ -8,7 +8,7 @@ const Profile = (props) => {
       <div className="porfile__wrapper">
         <div className="profile__row"></div>
         <div className="profile__row">
-          <ProfileInfo />
+          <ProfileInfo profile={props.profile}/>
         </div>
         <div className="profile__row">
           <ProfilePost text={props.text} postslist={props.postslist} dispatch={props.dispatch} />

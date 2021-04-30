@@ -1,9 +1,11 @@
 const ADD_POST = "ADD-POST";
 const CHANGE_TEXTAREA = "CHANGE-TEXTAREA";
+const SET_PROFILE_USER = "SET_PROFILE_USER";
 
 let initialState = {
   posts: ["Donec et velit accumsan, dapibus est in, lobortis diam."],
-  textvalue: ""
+  textvalue: "",
+  profile: null
 }
 
 const profileReduce = (state = initialState, action) => {
@@ -38,6 +40,12 @@ const profileReduce = (state = initialState, action) => {
         textvalue: action.text
       }
     }
+    case SET_PROFILE_USER: {
+      return {
+        ...state,
+        profile: action.profile
+      }
+    }
     default: 
       return state;
     }
@@ -54,6 +62,13 @@ export const changePostActionCreator = (text) => {
   return {
     type: CHANGE_TEXTAREA,
     text:text
+  }
+}
+
+export const setProfileUser = (profile) => {
+  return {
+    type: SET_PROFILE_USER,
+    profile
   }
 }
 

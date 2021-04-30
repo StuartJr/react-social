@@ -2,7 +2,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 
 import "./Content.css";
 import Navbar from "./../Navbar/Navbar.js";
-import Profile from "./../Profile/Profile.js";
+import ProfileContainer from "./../Profile/ProfileContainer.js";
 import Dialogs from "./../Dialogs/Dialogs.js";
 import Users from "./../Users/UsersComponent.js"
 import StoreContext from "./../../storeContex.js";
@@ -25,7 +25,7 @@ const Content = (props) => {
             <Route path="/profile" component={Profile} />*/}
 
             <Route path="/dialogs" render={() => <Dialogs names={props.names} messages={props.messages} /> } />
-            <Route path="/profile" render={() => <Profile text={props.text} postslist={props.postslist} dispatch={props.dispatch}/> } /> 
+            <Route path="/profile" render={() => <ProfileContainer text={props.text} postslist={props.postslist} dispatch={props.dispatch}/> } /> 
             <Route path="/users" render={() => <Users /> } />  
           </div>
         </div> 
