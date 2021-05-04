@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import * as axios from "axios";
 import Users from "./Users.js";
 import Preloader from "./../common/Preloader/Preloader.js";
+import {getUsers} from "./../../api/Api.js";
 
 import { 
   unfollow,
@@ -18,11 +19,10 @@ class UsersApiComponent extends React.Component {
 
   componentDidMount() {
     this.props.setIsFetching(true);
-    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
-      .then(response => {
+    getUsers(this.props.currentPage, this.props.pageSize).then(data => {
          this.props.setIsFetching(false);
-         this.props.setUsers(response.data.items)
-         this.props.setTotalCount(response.data.totalCount)
+         this.props.setUsers(data.items)
+         this.props.setTotalCount(data.totalCount)
          const allItemPagination = document.querySelectorAll(".pagination__item");
          const maxLength = Number(allItemPagination.length - 1);
          allItemPagination[0].style.display="flex";
@@ -39,10 +39,9 @@ class UsersApiComponent extends React.Component {
   onPageChanged = (index) => {
     this.props.setCurrentPage(index);
     this.props.setIsFetching(true);
-    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${index}&count=${this.props.pageSize}`)
-      .then(response => {
+    getUsers(index, this.props.pageSize).then(data => {
         this.props.setIsFetching(false);
-         this.props.setUsers(response.data.items)
+         this.props.setUsers(data.items)
       });
     const allItemPagination = document.querySelectorAll(".pagination__item");
     for (let item of allItemPagination) {

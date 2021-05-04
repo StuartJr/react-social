@@ -5,15 +5,18 @@ import './nullstyle.css';
 import reportWebVitals from './reportWebVitals';
 import "./assets/style/style.scss";
 
-import Header from "./components/Header/Header.js"
+import HeaderContainer from "./components/Header/HeaderContainer.js"
 import Content from "./components/Content/Content.js"
 import Footer from "./components/Footer/Footer.js"
 
 import store from "./redux/redux-store.js";
+import {Provider} from "react-redux";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Header />
+  <Provider store={store}>
+    <HeaderContainer />
+  </Provider>
     <Content
       names={store.getState().pageMessages.names}
       text={store.getState().pageProfile.textvalue}
@@ -26,5 +29,5 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-
+window.store = store
 reportWebVitals();

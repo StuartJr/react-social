@@ -25,7 +25,7 @@ const Content = (props) => {
             <Route path="/profile" component={Profile} />*/}
 
             <Route path="/dialogs" render={() => <Dialogs names={props.names} messages={props.messages} /> } />
-            <Route path="/profile" render={() => <ProfileContainer text={props.text} postslist={props.postslist} dispatch={props.dispatch}/> } /> 
+            <Route path="/profile/:userId?" render={() => <ProfileContainer text={props.text} postslist={props.postslist} dispatch={props.dispatch}/> } /> 
             <Route path="/users" render={() => <Users /> } />  
           </div>
         </div> 

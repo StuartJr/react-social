@@ -8,7 +8,10 @@ const ProfileInfo = (props) => {
   return (
     <div className="profile-info">
       <div className="profile-info__avatar">
-        <img src={props.profile.photos.large} alt="img" className="profile-info__avatar-img" />
+      { props.profile.photos.large ?
+        <img src={props.profile.photos.large} alt="img" className="profile-info__avatar-img" /> :
+        <img src="https://yt3.ggpht.com/a/AATXAJwueKcxgjjkF7pyYFCWCaZTkF-ZruSEG1VnIg=s900-c-k-c0xffffffff-no-rj-mo" alt="img" className="profile-info__avatar-img"  />
+      }
       </div>
       <div className="profile-info__wrapper">
         <p className="profile-info__title">{props.profile.fullName}</p>
