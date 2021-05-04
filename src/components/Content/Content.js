@@ -5,7 +5,7 @@ import Navbar from "./../Navbar/Navbar.js";
 import ProfileContainer from "./../Profile/ProfileContainer.js";
 import Dialogs from "./../Dialogs/Dialogs.js";
 import Users from "./../Users/UsersComponent.js"
-import StoreContext from "./../../storeContex.js";
+// import StoreContext from "./../../storeContex.js";
 import store from "./../../redux/redux-store.js";
 import {Provider} from "react-redux";
 
