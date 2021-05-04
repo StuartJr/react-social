@@ -5,6 +5,7 @@ import Navbar from "./../Navbar/Navbar.js";
 import ProfileContainer from "./../Profile/ProfileContainer.js";
 import Dialogs from "./../Dialogs/Dialogs.js";
 import Users from "./../Users/UsersComponent.js"
+import Login from "./../Login/Login.js";
 // import StoreContext from "./../../storeContex.js";
 import store from "./../../redux/redux-store.js";
 import {Provider} from "react-redux";
@@ -26,7 +27,8 @@ const Content = (props) => {
 
             <Route path="/dialogs" render={() => <Dialogs names={props.names} messages={props.messages} /> } />
             <Route path="/profile/:userId?" render={() => <ProfileContainer text={props.text} postslist={props.postslist} dispatch={props.dispatch}/> } /> 
-            <Route path="/users" render={() => <Users /> } />  
+            <Route path="/users" render={() => <Users /> } />
+            <Route path="/login" render={() => <Login /> } /> 
           </div>
         </div> 
       </div> 

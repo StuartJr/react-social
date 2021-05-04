@@ -1,4 +1,4 @@
-import {getUsers} from "./../api/Api.js";
+import { getUsers } from "./../api/Api.js";
 
 const FOLLOW = "FOLLOW";
 const UNFOLLOW = "UNFOLLOW";
@@ -80,7 +80,7 @@ export const getUsersThunkCreator = (currentPage, pageSize, firstpage) => {
           }
         }
       }
-      
+
     });
   }
 }

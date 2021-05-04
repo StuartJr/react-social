@@ -24,9 +24,9 @@ const Navbar = () => {
             </NavLink>
           </div>
           <div className="navbar__list-item">
-            <a href="/" className="navbar__list-link">
-             Music
-            </a>
+            <NavLink to="/login" className="navbar__list-link">
+              Login
+            </NavLink>
           </div>
         </nav>
         <div className="navbar__settings">
