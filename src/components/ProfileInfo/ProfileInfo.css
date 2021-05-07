@@ -24,3 +24,26 @@
   max-width: 200px;
   max-height: 200px;
 }
+
+
+.status,
+.status__item {
+  padding-bottom: 20px;
+}
+.status__item:last-child {
+  padding-bottom: 0px;
+}
+
+
+.status__span {
+  font-size     : 24px;
+  color         : #474747;
+  line-height   : 26px;
+}
+
+.status__input {
+  border-radius: 8px;
+  border: 1px solid #474747;
+  padding: 8px 14px;
+  font-size     : 24px;
+}
