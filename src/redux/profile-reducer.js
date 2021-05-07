@@ -1,11 +1,15 @@
+import {getStatus, updateStatus} from "./../api/Api.js";
+
 const ADD_POST = "ADD-POST";
 const CHANGE_TEXTAREA = "CHANGE-TEXTAREA";
 const SET_PROFILE_USER = "SET_PROFILE_USER";
+const SET_STATUS = "SET_STATUS";
 
 let initialState = {
   posts: ["Donec et velit accumsan, dapibus est in, lobortis diam."],
   textvalue: "",
-  profile: null
+  profile: null,
+  status: ""
 }
 
 const profileReduce = (state = initialState, action) => {
@@ -46,6 +50,12 @@ const profileReduce = (state = initialState, action) => {
         profile: action.profile
       }
     }
+    case SET_STATUS: {
+      return {
+        ...state,
+        status: action.status
+      }
+    }
     default: 
       return state;
     }
@@ -70,6 +80,22 @@ export const setProfileUser = (profile) => {
     type: SET_PROFILE_USER,
     profile
   }
+}
+
+export const setStatus = (status) => ({ type: SET_STATUS, status })
+
+export const getStatusUser = (userid) => (dispatch) => {
+  getStatus(userid).then(data => {
+    dispatch(setStatus(data))
+  })
+}
+
+export const updateStatusUser = (status) => (dispatch) => {
+  updateStatus(status).then(data => {
+    if (data.resultCode === 0) {
+      dispatch(setStatus(status))
+    }
+  })
 }
 
 export default profileReduce;
