@@ -1,6 +1,6 @@
 import "./ProfileInfo.css";
 import Preloader from "./../common/Preloader/Preloader.js";
-import ProfileStatus from "./ProfileStatus.js";
+import ProfileStatusWithHooks from "./ProfileStatusWithHooks.js";
 
 const ProfileInfo = (props) => {
   if (!props.profile) {
@@ -15,7 +15,7 @@ const ProfileInfo = (props) => {
       }
       </div>
       <div className="profile-info__wrapper">
-        <ProfileStatus status={props.status}/>
+        <ProfileStatusWithHooks status={props.status}/>
         <p className="profile-info__title">{props.profile.fullName}</p>
         <ul className="profile-info__list">
           <li className="profile-info__list-item">About me: {props.profile.aboutMe}</li>
